@@ -551,7 +551,7 @@ function App() {
 
 
   const generatePDF = async () => {
-    const url = '/template.pdf';
+    const url = `${import.meta.env.BASE_URL}template.pdf`;
     const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
     const form = pdfDoc.getForm();

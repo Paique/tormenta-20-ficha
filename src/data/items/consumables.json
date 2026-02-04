@@ -1,0 +1,69 @@
+[
+    {
+        "name": "Ácido",
+        "type": "Alquímico",
+        "price": 10,
+        "slots": 0.5,
+        "effect": "Causa 2d6 de dano de ácido."
+    },
+    {
+        "name": "Bálsamo restaurador",
+        "type": "Alquímico",
+        "price": 10,
+        "slots": 0.5,
+        "effect": "Cura 2d4 PV."
+    },
+    {
+        "name": "Fogo alquímico",
+        "type": "Alquímico",
+        "price": 10,
+        "slots": 0.5,
+        "effect": "Causa 1d6 de dano de fogo por rodada."
+    },
+    {
+        "name": "Bomba",
+        "type": "Alquímico",
+        "price": 50,
+        "slots": 0.5,
+        "effect": "Causa 6d6 de dano de impacto em área."
+    },
+    {
+        "name": "Essência de mana",
+        "type": "Alquímico",
+        "price": 50,
+        "slots": 0.5,
+        "effect": "Recupera 1d4+1 PM."
+    },
+    {
+        "name": "Poção de Curar Ferimentos",
+        "type": "Poção",
+        "spellLevel": 1,
+        "price": 30,
+        "slots": 0.5,
+        "effect": "Cura 2d8+2 PV."
+    },
+    {
+        "name": "Poção de Velocidade",
+        "type": "Poção",
+        "spellLevel": 3,
+        "price": 270,
+        "slots": 0.5,
+        "effect": "Recebe uma ação padrão extra."
+    },
+    {
+        "name": "Pergaminho de Seta Infalível",
+        "type": "Pergaminho",
+        "spellLevel": 1,
+        "price": 30,
+        "slots": 0.5,
+        "effect": "Causa 1d4+1 de dano de essência por seta."
+    },
+    {
+        "name": "Pergaminho de Bola de Fogo",
+        "type": "Pergaminho",
+        "spellLevel": 2,
+        "price": 270,
+        "slots": 0.5,
+        "effect": "Causa 6d6 de dano de fogo em área."
+    }
+]

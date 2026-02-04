@@ -1,0 +1,594 @@
+[
+    {
+        "name": "Abençoar Alimentos",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Transmutação",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "alimento para 1 criatura",
+        "duration": "cena",
+        "resistance": "",
+        "description": "Você purifica e abençoa uma porção de comida ou dose de bebida. Torna alimento sujo/estragado próprio para consumo. Se consumido até o final da duração, oferece 5 PV temporários ou 1 PM temporário.",
+        "augments": [
+            {
+                "cost": "Truque",
+                "description": "Purifica mas não dá bônus."
+            },
+            {
+                "cost": "+1 PM",
+                "description": "Aumenta o número de alvos em +1."
+            },
+            {
+                "cost": "+1 PM",
+                "description": "Muda duração para permanente, cria água benta (requer pó de prata T$ 5)."
+            }
+        ]
+    },
+    {
+        "name": "Acalmar Animal",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Encantamento",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "1 animal",
+        "duration": "cena",
+        "resistance": "Vontade anula",
+        "description": "O animal fica prestativo (+10 em Adestramento/Diplomacia). Se hostil ou em combate, recebe +5 na resistência.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Muda o alcance para médio."
+            },
+            {
+                "cost": "+1 PM",
+                "description": "Muda o alvo para 1 monstro ou espírito com Int -5 ou -4."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Aumenta o número de alvos em +1."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Muda o alvo para monstro ou espírito."
+            }
+        ]
+    },
+    {
+        "name": "Adaga Mental",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Encantamento",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "1 criatura",
+        "duration": "instantânea",
+        "resistance": "Vontade parcial",
+        "description": "Dispara adaga imaterial causando 2d6 dano psíquico e atordoamento por 1 rodada. Resistência reduz dano à metade e evita atordoamento.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Sem gestos/palavras, adaga invisível."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Muda duração para 1 dia, rastrea o alvo."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Aumenta o dano em +1d6."
+            }
+        ]
+    },
+    {
+        "name": "Alarme",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Abjuração",
+        "execution": "padrão",
+        "range": "curto",
+        "area": "esfera de 9m de raio",
+        "duration": "1 dia",
+        "resistance": "",
+        "description": "Cria barreira que detecta invasores. Pode emitir aviso sonoro (longo) ou telepático (1km).",
+        "augments": [
+            {
+                "cost": "+2 PM",
+                "description": "Alcance pessoal, emanação."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Detecta adivinhação e permite contra-rastreio."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Armadilha paralisante (1d4 rodadas, Vontade anula)."
+            }
+        ]
+    },
+    {
+        "name": "Amedrontar",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Necromancia",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "1 animal ou humanoide",
+        "duration": "cena",
+        "resistance": "Vontade parcial",
+        "description": "Se falhar, fica apavorado por 1 rodada, depois abalado. Se passar, abalado por 1d4 rodadas.",
+        "augments": [
+            {
+                "cost": "+2 PM",
+                "description": "Apavorado por 1d4+1 rodadas."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Muda alvo para criatura."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Afeta todos os alvos escolhidos."
+            }
+        ]
+    },
+    {
+        "name": "Área Escorregadia",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Convocação",
+        "execution": "padrão",
+        "range": "curto",
+        "area": "quadrado de 3m ou 1 objeto",
+        "duration": "cena",
+        "resistance": "Reflexos",
+        "description": "Chão fica escorregadio (Acrobacia CD 10 para equilibrar). Objeto pode cair da mão.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Aumenta área em +1 quadrado de 1,5m."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Muda CD para 15."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Muda CD para 20."
+            }
+        ]
+    },
+    {
+        "name": "Arma Espiritual",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Convocação",
+        "execution": "padrão",
+        "range": "pessoal",
+        "target": "você",
+        "duration": "cena",
+        "resistance": "",
+        "description": "Invoca arma da divindade. Reação uma vez por rodada para causar 2d6 dano automático em quem te ataca corpo a corpo.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Protege, +1 Defesa."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "+1 Defesa."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Sustentada, ataca como ação livre."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Dano de essência."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "+1d6 dano."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Duas armas."
+            }
+        ]
+    },
+    {
+        "name": "Arma Mágica",
+        "type": "Universal",
+        "circle": 1,
+        "school": "Transmutação",
+        "execution": "padrão",
+        "range": "toque",
+        "target": "1 arma",
+        "duration": "cena",
+        "resistance": "",
+        "description": "Arma recebe +1 ataque e dano. Pode usar atributo-chave para ataque.",
+        "augments": [
+            {
+                "cost": "Truque",
+                "description": "Funciona como tocha."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Aumenta bônus em +1."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "+1d6 dano elemental."
+            },
+            {
+                "cost": "+3 PM",
+                "description": "+2d6 dano elemental."
+            }
+        ]
+    },
+    {
+        "name": "Armadura Arcana",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Abjuração",
+        "execution": "padrão",
+        "range": "pessoal",
+        "target": "você",
+        "duration": "cena",
+        "resistance": "",
+        "description": "Película protetora fornece +5 Defesa. Cumulativo com outras magias, não com armaduras.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Execução reação, +5 Defesa contra um ataque (cumulativo com tudo)."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Aumenta bônus em +1."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Duração 1 dia."
+            }
+        ]
+    },
+    {
+        "name": "Armamento da Natureza",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Transmutação",
+        "execution": "padrão",
+        "range": "toque",
+        "target": "1 arma primitiva/natural",
+        "duration": "cena",
+        "resistance": "",
+        "description": "Dano aumenta em um passo e conta como mágica. Pode mudar tipo de dano físicos.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "+1 teste de ataque."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Execução movimento."
+            },
+            {
+                "cost": "+3 PM",
+                "description": "+1 teste de ataque."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Aumenta dano em mais um passo."
+            }
+        ]
+    },
+    {
+        "name": "Aviso",
+        "type": "Universal",
+        "circle": 1,
+        "school": "Adivinhação",
+        "execution": "movimento",
+        "range": "longo",
+        "target": "1 criatura",
+        "duration": "instantânea",
+        "resistance": "",
+        "description": "Aviso telepático. Escolha: Alerta (+5 Inic/Percepção), Mensagem (25 palavras) ou Localização (sabe onde você está).",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Alcance x10."
+            },
+            {
+                "cost": "+1 PM",
+                "description": "Permite resposta."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Localização dura cena."
+            },
+            {
+                "cost": "+3 PM",
+                "description": "+1 alvo."
+            }
+        ]
+    },
+    {
+        "name": "Bênção",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Encantamento",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "criaturas escolhidas",
+        "duration": "cena",
+        "resistance": "",
+        "description": "+1 ataque e dano. Anula Perdição.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Alvo 1 cadáver, preserva por 1 semana."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Aumenta bônus em +1."
+            }
+        ]
+    },
+    {
+        "name": "Caminhos da Natureza",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Convocação",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "criaturas escolhidas",
+        "duration": "1 dia",
+        "resistance": "",
+        "description": "Deslocamento +3m e ignora terreno difícil natural.",
+        "augments": [
+            {
+                "cost": "Truque",
+                "description": "Sabe o norte, +5 Sobrevivência (pessoal)."
+            },
+            {
+                "cost": "+1 PM",
+                "description": "+10 CD para rastrear."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "+3m deslocamento."
+            }
+        ]
+    },
+    {
+        "name": "Comando",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Encantamento",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "1 humanoide",
+        "duration": "1 rodada",
+        "resistance": "Vontade anula",
+        "description": "Ordem irresistível: Fuja, Largue, Pare (pasmo), Senta, Venha.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Muda alvo para criatura."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "+1 alvo."
+            }
+        ]
+    },
+    {
+        "name": "Criar Ilusão",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Ilusão",
+        "execution": "padrão",
+        "range": "médio",
+        "area": "4 cubos de 1,5m",
+        "duration": "cena",
+        "resistance": "Vontade desacredita",
+        "description": "Ilusão visual ou sonora simples. Atravessável.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Sustentada, móvel."
+            },
+            {
+                "cost": "+1 PM",
+                "description": "+1 cubo."
+            },
+            {
+                "cost": "+1 PM",
+                "description": "Som e imagem."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Odores/térmico."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Tátil (barra passagem)."
+            }
+        ]
+    },
+    {
+        "name": "Curar Ferimentos",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Evocação",
+        "execution": "padrão",
+        "range": "toque",
+        "target": "1 criatura",
+        "duration": "instantânea",
+        "resistance": "",
+        "description": "Recupera 2d8+2 PV. Anula Infligir Ferimentos. Truque: 1d8 dano luz em mortos-vivos.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "+1d8+1 cura."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Remove fadiga."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Alcance curto."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Alcance curto, alvos escolhidos."
+            }
+        ]
+    },
+    {
+        "name": "Despedaçar",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Evocação",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "1 criatura ou objeto P",
+        "duration": "instantânea",
+        "resistance": "Fort/Ref",
+        "description": "1d8+2 impacto e atordoado. Fortitude reduz metade/evita atordoamento. Dobro dano em objetos/construtos.",
+        "augments": [
+            {
+                "cost": "+2 PM",
+                "description": "+1d8+2 dano."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Explosão 6m (pessoal)."
+            }
+        ]
+    },
+    {
+        "name": "Seta Infalível de Talude",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Evocação",
+        "execution": "padrão",
+        "range": "médio",
+        "target": "criaturas escolhidas",
+        "duration": "instantânea",
+        "resistance": "",
+        "description": "Duas setas de energia, 1d4+1 essência cada. Acerto automático.",
+        "augments": [
+            {
+                "cost": "+2 PM",
+                "description": "Muda para lanças (1d8+1 cada)."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "3 setas."
+            },
+            {
+                "cost": "+4 PM",
+                "description": "5 setas."
+            }
+        ]
+    },
+    {
+        "name": "Silêncio",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Ilusão",
+        "execution": "padrão",
+        "range": "médio",
+        "area": "esfera 6m",
+        "duration": "sustentada",
+        "resistance": "",
+        "description": "Nenhum som na área. Criaturas ficam surdas, impede magias verbais.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Alvo objeto, emanação 3m."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Duração cena, impede som sair mas permite interno."
+            }
+        ]
+    },
+    {
+        "name": "Sono",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Encantamento",
+        "execution": "padrão",
+        "range": "curto",
+        "target": "1 humanoide",
+        "duration": "cena",
+        "resistance": "Vontade parcial",
+        "description": "Inconsciente (se seguro) ou exausto/fatigado.",
+        "augments": [
+            {
+                "cost": "+2 PM",
+                "description": "Exausto por 1d4+1 rodadas."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Alvo criatura."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Todos alvos escolhidos."
+            }
+        ]
+    },
+    {
+        "name": "Suporte Ambiental",
+        "type": "Divina",
+        "circle": 1,
+        "school": "Abjuração",
+        "execution": "padrão",
+        "range": "toque",
+        "target": "1 criatura",
+        "duration": "1 dia",
+        "resistance": "",
+        "description": "Imune a extremos de calor/frio, respira na água, não sufoca.",
+        "augments": [
+            {
+                "cost": "Truque",
+                "description": "Imune a condições climáticas menores (molhado, etc)."
+            },
+            {
+                "cost": "+5 PM",
+                "description": "Curto, alvos escolhidos."
+            }
+        ]
+    },
+    {
+        "name": "Teia",
+        "type": "Arcana",
+        "circle": 1,
+        "school": "Convocação",
+        "execution": "padrão",
+        "range": "curto",
+        "area": "cubo 6m",
+        "duration": "cena",
+        "resistance": "Reflexos anula",
+        "description": "Fibras pegajosas, enredado se falhar. Terreno difícil, inflamável.",
+        "augments": [
+            {
+                "cost": "+1 PM",
+                "description": "Também imóvel."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "Afeta novamente no início do turno."
+            },
+            {
+                "cost": "+2 PM",
+                "description": "+1 cubo."
+            }
+        ]
+    }
+]

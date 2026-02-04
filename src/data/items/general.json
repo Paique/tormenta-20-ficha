@@ -1,0 +1,177 @@
+[
+    {
+        "name": "Prato do aventureiro",
+        "type": "Alimentação",
+        "price": 0.5,
+        "slots": 0.5
+    },
+    {
+        "name": "Ração de viagem",
+        "type": "Alimentação",
+        "price": 0.5,
+        "slots": 0.5
+    },
+    {
+        "name": "Mochila",
+        "type": "Equipamento de Aventura",
+        "price": 2,
+        "slots": 0
+    },
+    {
+        "name": "Mochila de aventureiro",
+        "type": "Equipamento de Aventura",
+        "price": 50,
+        "slots": 0
+    },
+    {
+        "name": "Bandoleira de poções",
+        "type": "Equipamento de Aventura",
+        "price": 20,
+        "slots": 1
+    },
+    {
+        "name": "Organizador de pergaminhos",
+        "type": "Equipamento de Aventura",
+        "price": 25,
+        "slots": 1
+    },
+    {
+        "name": "Corda",
+        "type": "Equipamento de Aventura",
+        "price": 1,
+        "slots": 1
+    },
+    {
+        "name": "Tocha",
+        "type": "Equipamento de Aventura",
+        "price": 0.1,
+        "slots": 1
+    },
+    {
+        "name": "Lampião",
+        "type": "Equipamento de Aventura",
+        "price": 7,
+        "slots": 1
+    },
+    {
+        "name": "Símbolo sagrado",
+        "type": "Equipamento de Aventura",
+        "price": 5,
+        "slots": 1
+    },
+    {
+        "name": "Água benta",
+        "type": "Equipamento de Aventura",
+        "price": 10,
+        "slots": 0.5
+    },
+    {
+        "name": "Algemas",
+        "type": "Equipamento de Aventura",
+        "price": 15,
+        "slots": 1
+    },
+    {
+        "name": "Saco de dormir",
+        "type": "Equipamento de Aventura",
+        "price": 1,
+        "slots": 1
+    },
+    {
+        "name": "Varinha arcana",
+        "type": "Esotérico",
+        "price": 100,
+        "slots": 1
+    },
+    {
+        "name": "Cajado arcano",
+        "type": "Esotérico",
+        "price": 1000,
+        "slots": 2
+    },
+    {
+        "name": "Tomo hermético",
+        "type": "Esotérico",
+        "price": 1500,
+        "slots": 1,
+        "description": "Grimório voador para magos."
+    },
+    {
+        "name": "Medalhão de prata",
+        "type": "Esotérico",
+        "price": 750,
+        "slots": 1
+    },
+    {
+        "name": "Orbe cristalino",
+        "type": "Esotérico",
+        "price": 750,
+        "slots": 1
+    },
+    {
+        "name": "Equipamento de viagem",
+        "type": "Ferramenta",
+        "price": 10,
+        "slots": 1
+    },
+    {
+        "name": "Instrumentos de ofício",
+        "type": "Ferramenta",
+        "price": 30,
+        "slots": 1
+    },
+    {
+        "name": "Instrumento musical",
+        "type": "Ferramenta",
+        "price": 35,
+        "slots": 1
+    },
+    {
+        "name": "Maleta de medicamentos",
+        "type": "Ferramenta",
+        "price": 50,
+        "slots": 1
+    },
+    {
+        "name": "Estojo de disfarces",
+        "type": "Ferramenta",
+        "price": 50,
+        "slots": 1
+    },
+    {
+        "name": "Luneta",
+        "type": "Ferramenta",
+        "price": 100,
+        "slots": 1
+    },
+    {
+        "name": "Pônei",
+        "type": "Animal",
+        "price": 75,
+        "slots": 0
+    },
+    {
+        "name": "Cavalo",
+        "type": "Animal",
+        "price": 150,
+        "slots": 0
+    },
+    {
+        "name": "Trobo",
+        "type": "Animal",
+        "price": 100,
+        "slots": 0
+    },
+    {
+        "name": "Carroça",
+        "type": "Veículo",
+        "price": 50,
+        "slots": 0
+    },
+    {
+        "name": "Carruagem",
+        "type": "Veículo",
+        "price": 150,
+        "slots": 0
+    }
+]

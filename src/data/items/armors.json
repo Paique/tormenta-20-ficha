@@ -1,0 +1,130 @@
+[
+    {
+        "name": "Armadura acolchoada",
+        "category": "Leve",
+        "price": 5,
+        "defense": 1,
+        "penalty": 0,
+        "slots": 2
+    },
+    {
+        "name": "Armadura de couro",
+        "category": "Leve",
+        "price": 20,
+        "defense": 2,
+        "penalty": 0,
+        "slots": 2
+    },
+    {
+        "name": "Couro batido",
+        "category": "Leve",
+        "price": 35,
+        "defense": 3,
+        "penalty": -1,
+        "slots": 2
+    },
+    {
+        "name": "Gibão de peles",
+        "category": "Leve",
+        "price": 25,
+        "defense": 4,
+        "penalty": -3,
+        "slots": 2
+    },
+    {
+        "name": "Couraça",
+        "category": "Leve",
+        "price": 500,
+        "defense": 5,
+        "penalty": -4,
+        "slots": 2
+    },
+    {
+        "name": "Brunea",
+        "category": "Pesada",
+        "price": 50,
+        "defense": 5,
+        "penalty": -2,
+        "slots": 5
+    },
+    {
+        "name": "Cota de malha",
+        "category": "Pesada",
+        "price": 150,
+        "defense": 5,
+        "penalty": -2,
+        "slots": 5
+    },
+    {
+        "name": "Loriga segmentada",
+        "category": "Pesada",
+        "price": 250,
+        "defense": 6,
+        "penalty": -3,
+        "slots": 5
+    },
+    {
+        "name": "Meia armadura",
+        "category": "Pesada",
+        "price": 600,
+        "defense": 7,
+        "penalty": -4,
+        "slots": 5
+    },
+    {
+        "name": "Armadura completa",
+        "category": "Pesada",
+        "price": 3000,
+        "defense": 10,
+        "penalty": -5,
+        "slots": 5
+    },
+    {
+        "name": "Escudo leve",
+        "category": "Escudo",
+        "price": 5,
+        "defense": 1,
+        "penalty": -1,
+        "slots": 1
+    },
+    {
+        "name": "Escudo pesado",
+        "category": "Escudo",
+        "price": 15,
+        "defense": 2,
+        "penalty": -2,
+        "slots": 2
+    },
+    {
+        "name": "Armadura de ossos",
+        "category": "Leve",
+        "price": 120,
+        "defense": 3,
+        "penalty": -2,
+        "slots": 2
+    },
+    {
+        "name": "Veste de teia de aranha",
+        "category": "Leve",
+        "price": 3000,
+        "defense": 4,
+        "penalty": 0,
+        "slots": 2
+    },
+    {
+        "name": "Armadura de quitina",
+        "category": "Leve",
+        "price": 350,
+        "defense": 7,
+        "penalty": -3,
+        "slots": 5
+    },
+    {
+        "name": "Escudo de Couro",
+        "category": "Escudo",
+        "price": 3,
+        "defense": 1,
+        "penalty": -1,
+        "slots": 1
+    }
+]

@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Acuidade com Arma",
+        "category": "Combate",
+        "prerequisites": "Des 1",
+        "description": "Quando usa uma arma leve, ou uma arma de uma mão que possa ser usada com Acuidade com Arma (como um florete), você pode usar sua Destreza em vez de Força nos testes de ataque e rolagens de dano."
+    },
+    {
+        "name": "Ataque Poderoso",
+        "category": "Combate",
+        "prerequisites": "For 1",
+        "description": "Você pode sofrer -2 em testes de ataque para somar +5 em rolagens de dano."
+    },
+    {
+        "name": "Estilo de Duas Mãos",
+        "category": "Combate",
+        "prerequisites": "For 2, Treinado em Luta",
+        "description": "Se estiver usando uma arma de corpo a corpo com as duas mãos, você recebe +5 em rolagens de dano."
+    },
+    {
+        "name": "Esquiva",
+        "category": "Combate",
+        "prerequisites": "Des 1",
+        "description": "Você recebe +2 em Defesa e Reflexos."
+    },
+    {
+        "name": "Encouraçado",
+        "category": "Combate",
+        "prerequisites": "Proeficiência com Armaduras Pesadas",
+        "description": "Se estiver usando uma armadura pesada, você recebe +2 na Defesa."
+    },
+    {
+        "name": "Reflexos de Combate",
+        "category": "Combate",
+        "prerequisites": "Des 1",
+        "description": "Você recebe uma ação secundária adicional no primeiro turno de cada combate."
+    },
+    {
+        "name": "Vitalidade",
+        "category": "Combate",
+        "prerequisites": "Con 1",
+        "description": "Você recebe +1 PV por nível e +2 em Fortitude."
+    },
+    {
+        "name": "Saque Rápido",
+        "category": "Combate",
+        "prerequisites": "Treinado em Iniciativa",
+        "description": "Você recebe +2 em Iniciativa e pode sacar ou guardar armas como uma ação livre."
+    },
+    {
+        "name": "Trespassar",
+        "category": "Combate",
+        "prerequisites": "Ataque Poderoso",
+        "description": "Se você reduzir um inimigo a 0 PV com um ataque corpo a corpo, pode gastar 1 PM para fazer um ataque adicional contra outro inimigo no seu alcance."
+    },
+    {
+        "name": "Acrobático",
+        "category": "Destino",
+        "prerequisites": "Des 2",
+        "description": "Você pode usar sua Destreza em vez de Força em testes de Atletismo. Além disso, não sofre penalidade em deslocamento por terreno difícil."
+    },
+    {
+        "name": "Ao Sabor do Destino",
+        "category": "Destino",
+        "prerequisites": "6º nível de personagem",
+        "description": "Se você não possuir itens mágicos (exceto poções), recebe bônus em testes de perícia, Defesa e rolagens de dano que aumentam com seu nível."
+    },
+    {
+        "name": "Sortudo",
+        "category": "Destino",
+        "prerequisites": "Nenhum",
+        "description": "Você pode gastar 3 PM para repetir um teste que acabou de fazer (exceto testes de ataque)."
+    },
+    {
+        "name": "Surto Heroico",
+        "category": "Destino",
+        "prerequisites": "Nenhum",
+        "description": "Uma vez por rodada, você pode gastar 5 PM para realizar uma ação padrão ou de movimento adicional."
+    },
+    {
+        "name": "Treinamento em Perícia",
+        "category": "Destino",
+        "prerequisites": "Nenhum",
+        "description": "Você se torna treinado em uma perícia à sua escolha."
+    },
+    {
+        "name": "Vontade de Ferro",
+        "category": "Destino",
+        "prerequisites": "Sab 1",
+        "description": "Você recebe +1 PM para cada dois níveis de personagem e +2 em Vontade."
+    },
+    {
+        "name": "Inventário Organizado",
+        "category": "Destino",
+        "prerequisites": "Int 1",
+        "description": "Você soma sua Inteligência ao seu limite de carga de itens (em espaços)."
+    },
+    {
+        "name": "Magia Ilimitada",
+        "category": "Magia",
+        "prerequisites": "Nenhum",
+        "description": "O limite de PM que você pode gastar em uma magia aumenta em um valor igual ao seu atributo-chave de lançamento."
+    },
+    {
+        "name": "Magia Ampliada",
+        "category": "Magia",
+        "prerequisites": "Habilidade de classe Magias",
+        "description": "Você pode gastar +2 PM para dobrar o alcance ou a área de efeito de uma magia."
+    },
+    {
+        "name": "Magia Acelerada",
+        "category": "Magia",
+        "prerequisites": "Habilidade de classe Magias, 2º círculo de magias",
+        "description": "Uma vez por rodada, você pode gastar +4 PM para lançar uma magia como ação livre."
+    },
+    {
+        "name": "Foco em Magia",
+        "category": "Magia",
+        "prerequisites": "Habilidade de classe Magias",
+        "description": "Escolha uma magia. O custo dessa magia diminui em -1 PM (mínimo 1 PM)."
+    },
+    {
+        "name": "Preparar Poção",
+        "category": "Magia",
+        "prerequisites": "Habilidade de classe Magias, Treinado em Ofício (Alquimia)",
+        "description": "Você pode fabricar poções de magias de 1º e 2º círculos que conheça."
+    },
+    {
+        "name": "Afinidade com a Tormenta",
+        "category": "Tormenta",
+        "prerequisites": "Nenhum",
+        "description": "Você recebe +10 em testes de resistência contra efeitos da Tormenta. Seu primeiro poder da Tormenta não reduz seu Carisma."
+    },
+    {
+        "name": "Anatomia Insana",
+        "category": "Tormenta",
+        "prerequisites": "Um outro poder da Tormenta",
+        "description": "Você tem 25% de chance de ignorar o dano extra de um acerto crítico ou ataque furtivo. Essa chance aumenta com mais poderes da Tormenta."
+    },
+    {
+        "name": "Antenas",
+        "category": "Tormenta",
+        "prerequisites": "Dois outros poderes da Tormenta",
+        "description": "Você recebe +2 em Iniciativa, Percepção e Vontade. Esse bônus aumenta para cada dois outros poderes da Tormenta que você possui."
+    },
+    {
+        "name": "Armamento Aberrante",
+        "category": "Tormenta",
+        "prerequisites": "Um outro poder da Tormenta",
+        "description": "Você pode gastar 1 PM para fazer com que uma arma que esteja empunhando receba +1 em testes de ataque e rolagens de dano. Esse bônus aumenta com mais poderes da Tormenta."
+    },
+    {
+        "name": "Almejar o Impossível",
+        "category": "Concedido",
+        "prerequisites": "Devoto de Valkaria ou Thwor",
+        "description": "Seu valor de acerto crítico aumenta em +1 (por exemplo, de 20 para 19), mas apenas para sucessos automáticos."
+    },
+    {
+        "name": "Coragem Total",
+        "category": "Concedido",
+        "prerequisites": "Devoto de Khalmyr, Lin-Wu, Thwor ou Ares",
+        "description": "Você é imune a efeitos de medo (mágicos ou não)."
+    },
+    {
+        "name": "Kiai Divino",
+        "category": "Concedido",
+        "prerequisites": "Devoto de Lin-Wu",
+        "description": "Uma vez por rodada, após acertar um ataque corpo a corpo, você pode gastar 3 PM para causar dano máximo com a arma."
+    },
+    {
+        "name": "Voz da Natureza",
+        "category": "Concedido",
+        "prerequisites": "Devoto de Allihanna",
+        "description": "Você pode falar com animais e pode usar a perícia Adestramento com animais selvagens."
+    },
+    {
+        "name": "Golpe Divino",
+        "category": "Classe (Paladino)",
+        "prerequisites": "Paladino 1",
+        "description": "Quando faz um ataque corpo a corpo, você pode gastar 2 PM para somar seu Carisma no teste de ataque e +1d8 na rolagem de dano. A cada quatro níveis, pode gastar +1 PM para aumentar o dano em +1d8."
+    }
+]

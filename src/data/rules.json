@@ -1,0 +1,806 @@
+{
+    "races": [
+        {
+            "name": "Humano",
+            "mods": {
+                "select": 3,
+                "count": 1
+            }
+        },
+        {
+            "name": "Anão",
+            "mods": {
+                "Con": 2,
+                "Sab": 1,
+                "Des": -1
+            }
+        },
+        {
+            "name": "Dahllan",
+            "mods": {
+                "Sab": 2,
+                "Des": 1,
+                "Int": -1
+            }
+        },
+        {
+            "name": "Elfo",
+            "mods": {
+                "Int": 2,
+                "Des": 1,
+                "Con": -1
+            }
+        },
+        {
+            "name": "Goblin",
+            "mods": {
+                "Des": 2,
+                "Int": 1,
+                "Car": -1
+            }
+        },
+        {
+            "name": "Lefou",
+            "mods": {
+                "Car": -1,
+                "select": 3,
+                "count": 1,
+                "exclude": [
+                    "Car"
+                ]
+            }
+        },
+        {
+            "name": "Minotauro",
+            "mods": {
+                "For": 2,
+                "Con": 1,
+                "Sab": -1
+            }
+        },
+        {
+            "name": "Qareen",
+            "mods": {
+                "Car": 2,
+                "Int": 1,
+                "Sab": -1
+            }
+        },
+        {
+            "name": "Golem",
+            "mods": {
+                "For": 2,
+                "Con": 1,
+                "Car": -1
+            }
+        },
+        {
+            "name": "Hynne",
+            "mods": {
+                "Des": 2,
+                "Car": 1,
+                "For": -1
+            }
+        },
+        {
+            "name": "Kliren",
+            "mods": {
+                "Int": 2,
+                "Car": 1,
+                "For": -1
+            }
+        },
+        {
+            "name": "Medusa",
+            "mods": {
+                "Des": 2,
+                "Car": 1
+            }
+        },
+        {
+            "name": "Osteon",
+            "mods": {
+                "Con": -1,
+                "select": 3,
+                "count": 1,
+                "exclude": [
+                    "Con"
+                ]
+            }
+        },
+        {
+            "name": "Sereia/Tritão",
+            "mods": {
+                "select": 3,
+                "count": 1
+            }
+        },
+        {
+            "name": "Sílfide",
+            "mods": {
+                "Car": 2,
+                "Des": 1,
+                "For": -2
+            }
+        },
+        {
+            "name": "Suraggel (Aggelus)",
+            "mods": {
+                "Sab": 2,
+                "Car": 1
+            }
+        },
+        {
+            "name": "Suraggel (Sulfure)",
+            "mods": {
+                "Des": 2,
+                "Int": 1
+            }
+        },
+        {
+            "name": "Trog",
+            "mods": {
+                "Con": 2,
+                "For": 1,
+                "Int": -1
+            }
+        }
+    ],
+    "pointBuy": {
+        "points": 10,
+        "start": 0,
+        "costs": {
+            "-1": -1,
+            "0": 0,
+            "1": 1,
+            "2": 2,
+            "3": 4,
+            "4": 7
+        }
+    },
+    "classSkills": {
+        "Arcanista": {
+            "fixed": [
+                "Misticismo",
+                "Vontade"
+            ],
+            "choices": [
+                "Conhecimento",
+                "Diplomacia",
+                "Enganação",
+                "Guerra",
+                "Iniciativa",
+                "Intimidação",
+                "Intuição",
+                "Investigação",
+                "Nobreza",
+                "Ofício 1",
+                "Percepção"
+            ],
+            "count": 2,
+            "hp": 8,
+            "hpPerLevel": 2,
+            "mp": 6,
+            "prof": []
+        },
+        "Bárbaro": {
+            "fixed": [
+                "Fortitude",
+                "Luta"
+            ],
+            "choices": [
+                "Adestramento",
+                "Atletismo",
+                "Cavalgar",
+                "Iniciativa",
+                "Intimidação",
+                "Ofício 1",
+                "Percepção",
+                "Pontaria",
+                "Sobrevivência",
+                "Vontade"
+            ],
+            "count": 4,
+            "hp": 24,
+            "hpPerLevel": 6,
+            "mp": 3,
+            "prof": [
+                "Armas Marciais",
+                "Escudos"
+            ]
+        },
+        "Bardo": {
+            "fixed": [
+                "Atuação",
+                "Reflexos"
+            ],
+            "choices": [
+                "Acrobacia",
+                "Cavalgar",
+                "Conhecimento",
+                "Diplomacia",
+                "Enganação",
+                "Furtividade",
+                "Iniciativa",
+                "Intuição",
+                "Investigação",
+                "Jogatina",
+                "Ladinagem",
+                "Luta",
+                "Misticismo",
+                "Nobreza",
+                "Ofício 1",
+                "Percepção",
+                "Pontaria",
+                "Vontade"
+            ],
+            "count": 6,
+            "hp": 12,
+            "hpPerLevel": 3,
+            "mp": 4,
+            "prof": [
+                "Armas Marciais"
+            ]
+        },
+        "Bucaneiro": {
+            "fixed": [
+                "Reflexos"
+            ],
+            "selectFixed": {
+                "list": [
+                    "Luta",
+                    "Pontaria"
+                ],
+                "count": 1
+            },
+            "choices": [
+                "Acrobacia",
+                "Atletismo",
+                "Atuação",
+                "Enganação",
+                "Fortitude",
+                "Furtividade",
+                "Iniciativa",
+                "Intimidação",
+                "Jogatina",
+                "Luta",
+                "Ofício 1",
+                "Percepção",
+                "Pilotagem",
+                "Pontaria"
+            ],
+            "count": 4,
+            "hp": 16,
+            "hpPerLevel": 4,
+            "mp": 3,
+            "prof": [
+                "Armas Marciais"
+            ]
+        },
+        "Caçador": {
+            "fixed": [
+                "Sobrevivência"
+            ],
+            "selectFixed": {
+                "list": [
+                    "Luta",
+                    "Pontaria"
+                ],
+                "count": 1
+            },
+            "choices": [
+                "Adestramento",
+                "Atletismo",
+                "Cavalgar",
+                "Cura",
+                "Fortitude",
+                "Furtividade",
+                "Iniciativa",
+                "Investigação",
+                "Luta",
+                "Ofício 1",
+                "Percepção",
+                "Pontaria",
+                "Reflexos"
+            ],
+            "count": 6,
+            "hp": 16,
+            "hpPerLevel": 4,
+            "mp": 4,
+            "prof": [
+                "Armas Marciais",
+                "Escudos"
+            ]
+        },
+        "Cavaleiro": {
+            "fixed": [
+                "Fortitude",
+                "Luta"
+            ],
+            "choices": [
+                "Adestramento",
+                "Atletismo",
+                "Cavalgar",
+                "Diplomacia",
+                "Guerra",
+                "Iniciativa",
+                "Intimidação",
+                "Nobreza",
+                "Percepção",
+                "Vontade"
+            ],
+            "count": 2,
+            "hp": 20,
+            "hpPerLevel": 5,
+            "mp": 3,
+            "prof": [
+                "Armas Marciais",
+                "Armaduras Pesadas",
+                "Escudos"
+            ]
+        },
+        "Clérigo": {
+            "fixed": [
+                "Religião",
+                "Vontade"
+            ],
+            "choices": [
+                "Conhecimento",
+                "Cura",
+                "Diplomacia",
+                "Fortitude",
+                "Iniciativa",
+                "Intuição",
+                "Luta",
+                "Misticismo",
+                "Nobreza",
+                "Ofício 1",
+                "Percepção"
+            ],
+            "count": 2,
+            "hp": 16,
+            "hpPerLevel": 4,
+            "mp": 5,
+            "prof": [
+                "Armaduras Pesadas",
+                "Escudos"
+            ]
+        },
+        "Druida": {
+            "fixed": [
+                "Sobrevivência",
+                "Vontade"
+            ],
+            "choices": [
+                "Adestramento",
+                "Atletismo",
+                "Cavalgar",
+                "Conhecimento",
+                "Cura",
+                "Fortitude",
+                "Iniciativa",
+                "Intuição",
+                "Luta",
+                "Misticismo",
+                "Ofício 1",
+                "Percepção",
+                "Religião"
+            ],
+            "count": 4,
+            "hp": 16,
+            "hpPerLevel": 4,
+            "mp": 4,
+            "prof": [
+                "Escudos"
+            ]
+        },
+        "Guerreiro": {
+            "fixed": [
+                "Fortitude"
+            ],
+            "selectFixed": {
+                "list": [
+                    "Luta",
+                    "Pontaria"
+                ],
+                "count": 1
+            },
+            "choices": [
+                "Adestramento",
+                "Atletismo",
+                "Cavalgar",
+                "Guerra",
+                "Iniciativa",
+                "Intimidação",
+                "Luta",
+                "Ofício 1",
+                "Percepção",
+                "Pontaria",
+                "Reflexos"
+            ],
+            "count": 2,
+            "hp": 20,
+            "hpPerLevel": 5,
+            "mp": 3,
+            "prof": [
+                "Armas Marciais",
+                "Armaduras Pesadas",
+                "Escudos"
+            ]
+        },
+        "Inventor": {
+            "fixed": [
+                "Ofício 1",
+                "Vontade"
+            ],
+            "choices": [
+                "Conhecimento",
+                "Cura",
+                "Diplomacia",
+                "Fortitude",
+                "Iniciativa",
+                "Investigação",
+                "Luta",
+                "Misticismo",
+                "Ofício 1",
+                "Pilotagem",
+                "Percepção",
+                "Pontaria"
+            ],
+            "count": 4,
+            "hp": 12,
+            "hpPerLevel": 3,
+            "mp": 4,
+            "prof": []
+        },
+        "Ladino": {
+            "fixed": [
+                "Ladinagem",
+                "Reflexos"
+            ],
+            "choices": [
+                "Acrobacia",
+                "Atletismo",
+                "Atuação",
+                "Cavalgar",
+                "Conhecimento",
+                "Diplomacia",
+                "Enganação",
+                "Furtividade",
+                "Iniciativa",
+                "Intimidação",
+                "Intuição",
+                "Investigação",
+                "Jogatina",
+                "Luta",
+                "Ofício 1",
+                "Percepção",
+                "Pilotagem",
+                "Pontaria"
+            ],
+            "count": 8,
+            "hp": 12,
+            "hpPerLevel": 3,
+            "mp": 4,
+            "prof": []
+        },
+        "Lutador": {
+            "fixed": [
+                "Fortitude",
+                "Luta"
+            ],
+            "choices": [
+                "Acrobacia",
+                "Adestramento",
+                "Atletismo",
+                "Enganação",
+                "Furtividade",
+                "Iniciativa",
+                "Intimidação",
+                "Ofício 1",
+                "Percepção",
+                "Pontaria",
+                "Reflexos"
+            ],
+            "count": 4,
+            "hp": 20,
+            "hpPerLevel": 5,
+            "mp": 3,
+            "prof": []
+        },
+        "Nobre": {
+            "fixed": [
+                "Vontade"
+            ],
+            "selectFixed": {
+                "list": [
+                    "Diplomacia",
+                    "Intimidação"
+                ],
+                "count": 1
+            },
+            "choices": [
+                "Adestramento",
+                "Atuação",
+                "Cavalgar",
+                "Conhecimento",
+                "Diplomacia",
+                "Enganação",
+                "Fortitude",
+                "Guerra",
+                "Iniciativa",
+                "Intimidação",
+                "Intuição",
+                "Investigação",
+                "Jogatina",
+                "Luta",
+                "Nobreza",
+                "Ofício 1",
+                "Percepção",
+                "Pontaria"
+            ],
+            "count": 4,
+            "hp": 16,
+            "hpPerLevel": 4,
+            "mp": 4,
+            "prof": [
+                "Armas Marciais",
+                "Armaduras Pesadas",
+                "Escudos"
+            ]
+        },
+        "Paladino": {
+            "fixed": [
+                "Luta",
+                "Vontade"
+            ],
+            "choices": [
+                "Adestramento",
+                "Atletismo",
+                "Cavalgar",
+                "Cura",
+                "Diplomacia",
+                "Fortitude",
+                "Guerra",
+                "Iniciativa",
+                "Intuição",
+                "Nobreza",
+                "Percepção",
+                "Religião"
+            ],
+            "count": 2,
+            "hp": 20,
+            "hpPerLevel": 5,
+            "mp": 3,
+            "prof": [
+                "Armas Marciais",
+                "Armaduras Pesadas",
+                "Escudos"
+            ]
+        }
+    },
+    "classes": [
+        "Arcanista",
+        "Bárbaro",
+        "Bardo",
+        "Bucaneiro",
+        "Caçador",
+        "Cavaleiro",
+        "Clérigo",
+        "Druida",
+        "Guerreiro",
+        "Inventor",
+        "Ladino",
+        "Lutador",
+        "Nobre",
+        "Paladino"
+    ],
+    "origins": [
+        "Acólito",
+        "Amigo dos Animais",
+        "Amnésico",
+        "Aristocrata",
+        "Artesão",
+        "Artista",
+        "Assistente de Laboratório",
+        "Batedor",
+        "Capanga",
+        "Charlatão",
+        "Circense",
+        "Criminoso",
+        "Curandeiro",
+        "Eremita",
+        "Escravo",
+        "Estudioso",
+        "Fazendeiro",
+        "Forasteiro",
+        "Gladiador",
+        "Guarda",
+        "Herdeiro",
+        "Herói Camponês",
+        "Marujo",
+        "Mateiro",
+        "Membro de Guilda",
+        "Mercador",
+        "Minerador",
+        "Nômade",
+        "Pivete",
+        "Refugiado",
+        "Seguidor",
+        "Selvagem",
+        "Soldado",
+        "Taverneiro",
+        "Trabalhador"
+    ],
+    "gods": [
+        "Aharadak",
+        "Allihanna",
+        "Arsenal",
+        "Azgher",
+        "Hyninn",
+        "Kallyadranoch",
+        "Khalmyr",
+        "Lena",
+        "Lin-Wu",
+        "Marah",
+        "Megalokk",
+        "Nimb",
+        "Oceano",
+        "Sszzaas",
+        "Tanna-Toh",
+        "Tenebra",
+        "Thwor",
+        "Thyatis",
+        "Valkaria",
+        "Wynna"
+    ],
+    "godPowers": {
+        "Aharadak": [
+            "Afinidade com a Tormenta",
+            "Percepção Temporal",
+            "Rejeição Divina",
+            "Sabedoria da Loucura"
+        ],
+        "Allihanna": [
+            "Dedo Verde",
+            "Descanso Natural",
+            "Voz da Natureza",
+            "Sideral"
+        ],
+        "Arsenal": [
+            "Conjurador de Guerra",
+            "Coragem Total",
+            "Keenniense",
+            "Sangue de Ferro"
+        ],
+        "Azgher": [
+            "Ataque Piedoso",
+            "Espada Solar",
+            "Habitante do Deserto",
+            "Fulgor Solar"
+        ],
+        "Hyninn": [
+            "Astúcia da Raposa",
+            "Farsa do Jogador",
+            "Forma de Macaco",
+            "Golpe de Sorte"
+        ],
+        "Kallyadranoch": [
+            "Aura de Medo",
+            "Baforada de Dragão",
+            "Escamas Dracônicas",
+            "Servos do Dragão"
+        ],
+        "Khalmyr": [
+            "Coragem Total",
+            "Dom da Verdade",
+            "Espada Justiceira",
+            "Reparar Injustiça"
+        ],
+        "Lena": [
+            "Ataque Piedoso",
+            "Aura Restauradora",
+            "Cura Gentil",
+            "Curandeira Perfeita"
+        ],
+        "Lin-Wu": [
+            "Coragem Total",
+            "Kiai Divino",
+            "Mente Vazia",
+            "Tradição de Lin-Wu"
+        ],
+        "Marah": [
+            "Aura de Paz",
+            "Dom da Esperança",
+            "Palavras de Bondade",
+            "Talento Artístico"
+        ],
+        "Megalokk": [
+            "Olhar Amedrontador",
+            "Presas Primordiais",
+            "Urro Divino",
+            "Voz dos Monstros"
+        ],
+        "Nimb": [
+            "Êxtase da Loucura",
+            "Poder Oculto",
+            "Sorte dos Loucos",
+            "Transmissão da Loucura"
+        ],
+        "Oceano": [
+            "Anfíbio",
+            "Arsenal das Profundezas",
+            "Mestre dos Mares",
+            "Sopro do Mar"
+        ],
+        "Sszzaas": [
+            "Astúcia da Serpente",
+            "Familiar Ofídico",
+            "Presas Venenosas",
+            "Sangue Ofídico"
+        ],
+        "Tanna-Toh": [
+            "Conhecimento Enciclopédico",
+            "Mente Analítica",
+            "Pesquisa Abençoada",
+            "Voz da Civilização"
+        ],
+        "Tenebra": [
+            "Carícia Sombria",
+            "Manto da Penumbra",
+            "Visão nas Trevas",
+            "Zumbificar"
+        ],
+        "Thwor": [
+            "Almejar o Impossível",
+            "Fúria Divina",
+            "Olhar Amedrontador",
+            "Tropas Duyshidakk"
+        ],
+        "Thyatis": [
+            "Ataque Piedoso",
+            "Dom da Imortalidade",
+            "Dom da Profecia",
+            "Dom da Ressurreição"
+        ],
+        "Valkaria": [
+            "Almejar o Impossível",
+            "Armas da Ambição",
+            "Coragem Total",
+            "Liberdade Divina"
+        ],
+        "Wynna": [
+            "Bênção do Mana",
+            "Centelha Mágica",
+            "Escudo Mágico",
+            "Teurgista Místico"
+        ]
+    },
+    "alignments": [
+        "Leal e Bondoso",
+        "Neutro e Bondoso",
+        "Caótico e Bondoso",
+        "Leal e Neutro",
+        "Neutro",
+        "Caótico e Neutro",
+        "Leal e Maligno",
+        "Neutro e Maligno",
+        "Caótico e Maligno"
+    ],
+    "sizes": [
+        "Minúsculo",
+        "Pequeno",
+        "Médio",
+        "Grande",
+        "Enorme",
+        "Colossal"
+    ],
+    "proficiencies": [
+        "Armas Simples",
+        "Armas Marciais",
+        "Armas Exóticas",
+        "Armaduras Leves",
+        "Armaduras Pesadas",
+        "Escudos"
+    ]
+}

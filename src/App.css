@@ -1,0 +1,654 @@
+:root {
+  --tormenta-red: #b91c1c;
+  --bg-color: #f0f2f5;
+  --card-bg: white;
+  --text-color: #333;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: var(--tormenta-red);
+  margin-bottom: 10px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #444;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+h3 {
+  color: #666;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  border-left: 4px solid var(--tormenta-red);
+  padding-left: 10px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--tormenta-red);
+  outline: none;
+}
+
+.w-full {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.h-32 {
+  height: 120px;
+}
+
+/* Attribute Builder UI */
+.attr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.attr-header h2 {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.points-display {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.points-display.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.race-hint {
+  background: #fff7ed;
+  color: #c2410c;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.attr-grid-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.attr-row {
+  display: grid;
+  grid-template-columns: 80px 150px 80px 80px;
+  align-items: center;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.selected-bonus {
+  border: 1px solid var(--tormenta-red);
+  background: #fffafa;
+}
+
+.ctrl-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 20px;
+  padding: 2px;
+  border: 1px solid #ddd;
+}
+
+.ctrl-group button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--tormenta-red);
+}
+
+.ctrl-group button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.ctrl-group .base-val {
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.race-mod {
+  text-align: center;
+  color: #666;
+  font-weight: 500;
+}
+
+.race-mod input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--tormenta-red);
+}
+
+.final-val {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--tormenta-red);
+  text-align: right;
+  padding-right: 15px;
+}
+
+/* Combat & Defense */
+.defense-panel {
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.def-display {
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.def-total .label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.def-total .value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.def-formula {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* List Items (Attacks, Inventory) */
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.w-wide {
+  flex: 2;
+}
+
+.w-med {
+  flex: 1;
+}
+
+.w-small {
+  width: 60px;
+}
+
+.btn-add {
+  background: #eee;
+  border: 1px dashed #ccc;
+  color: #555;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-add:hover {
+  background: #e5e5e5;
+}
+
+.btn-del {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-del:hover {
+  background: #fecaca;
+}
+
+/* Tags (Powers) */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag-check {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.tag-check:has(input:checked) {
+  background: #fef2f2;
+  border-color: var(--tormenta-red);
+  color: var(--tormenta-red);
+  font-weight: bold;
+}
+
+.tag-check input {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px 30px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+}
+
+.skill-row.trained {
+  background: #fef2f2;
+}
+
+.skill-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  accent-color: var(--tormenta-red);
+}
+
+.skill-name {
+  flex-grow: 1;
+}
+
+.skill-total {
+  font-weight: bold;
+  color: #666;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-primary {
+  background: var(--tormenta-red);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 600px) {
+  .attr-row {
+    grid-template-columns: 50px 1fr 50px 50px;
+    font-size: 0.9rem;
+  }
+
+  .list-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .w-small,
+  .w-med,
+  .w-wide {
+    width: 100%;
+  }
+}
+
+/* UI Updates for Import & Warnings */
+.btn-secondary {
+  background: #64748b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.import-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.warnings-banner {
+  background: #fff7ed;
+  border-left: 5px solid #c2410c;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  color: #7c2d12;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.warnings-banner div {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.attr-row {
+  display: grid;
+  grid-template-columns: 80px 140px 100px 1fr;
+  align-items: center;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.attr-row.selected-bonus {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.attr-race-mod {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.mod-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.flex-bonus {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #15803d;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.flex-bonus input {
+  cursor: pointer;
+}
+
+/* Skills Selection UI */
+.skill-row.trained {
+  background: #fdf2f2;
+  border-color: #fecaca;
+}
+
+.skill-row.fixed-skill {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  cursor: default;
+}
+
+.skill-label {
+  margin-left: 8px;
+  background: #e2e8f0;
+  color: #475569;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.skill-row.fixed-skill .skill-label {
+  background: #64748b;
+  color: white;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.skill-row.fixed-skill .skill-label {
+  background: #64748b;
+  color: white;
+}
+
+.stat-box {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-box label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.stat-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-controls input {
+  width: 80px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.stat-controls span {
+  font-size: 1.2rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.skill-input {
+  border: none;
+  border-bottom: 2px dashed #cbd5e1;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  width: 150px;
+  padding: 2px 4px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.skill-input:focus {
+  outline: none;
+  border-bottom-color: #ef4444;
+}
+
+.skill-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.attributes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.attr-row {
+  display: grid;
+  grid-template-columns: 100px 140px 1fr;
+  align-items: center;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.attr-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.attr-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 25px;
+  text-align: center;
+}
+
+.attr-final {
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.attr-final strong {
+  color: #ef4444;
+  font-size: 1.3rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-box:first-of-type input {
+  color: #e11d48;
+}
+
+.stat-box:last-of-type input {
+  color: #2563eb;
+}

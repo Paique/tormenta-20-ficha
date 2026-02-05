@@ -266,31 +266,55 @@ function App() {
       const pdfDoc = await PDFDocument.load(arrayBuffer);
       const form = pdfDoc.getForm();
 
+      const allFieldNames = form.getFields().map(f => f.getName());
+      const findField = (name) => {
+        if (allFieldNames.includes(name)) return name;
+        return allFieldNames.find(f => f.toLowerCase() === name.toLowerCase()) || name;
+      };
+
       const getField = (name) => {
-        try { return form.getTextField(name).getText(); } catch (e) { return ""; }
+        try { return form.getTextField(findField(name)).getText(); } catch (e) { return ""; }
       };
       const getCheck = (name) => {
-        try { return form.getCheckBox(name).isChecked(); } catch (e) { return false; }
+        try { return form.getCheckBox(findField(name)).isChecked(); } catch (e) { return false; }
       };
       const getDropdown = (name) => {
-        try { return form.getDropdown(name).getSelected()[0]; } catch (e) { return ""; }
+        try { return form.getDropdown(findField(name)).getSelected()[0]; } catch (e) { return ""; }
       }
 
       const raceName = getField('RAÇA') || rules.races[0].name;
       const god = getField('DIVINDADE') || rules.gods[0];
 
       const classLevelStr = getField('CLASSE E NÍVEL') || "";
-      const [className, levelStr] = classLevelStr.split(' ');
+      let className = getField('CLASSE');
+      let levelStr = getField('NIVEL') || getField('NÍVEL') || getField('LEVEL');
+
+      if (!className && classLevelStr) {
+        // Attempt to split by space, expecting "Class Level"
+        const parts = classLevelStr.split(' ');
+        // Assuming last part is level if it's a number
+        const lastPart = parts[parts.length - 1];
+        if (!isNaN(parseInt(lastPart))) {
+          levelStr = lastPart;
+          className = parts.slice(0, -1).join(' ');
+        } else {
+          className = classLevelStr;
+        }
+      }
+
+      // Metadata normalization/Validation
+      const validClass = rules.classes.find(c => c.toLowerCase() === (className || "").toLowerCase()) || rules.classes[0];
 
       const newForm = {
         name: getField('NOME DO PERSONAGEM'),
         raceName: rules.races.find(r => r.name === raceName) ? raceName : rules.races[0].name,
-        class: rules.classes.includes(className) ? className : rules.classes[0],
+        class: validClass,
         level: parseInt(levelStr) || 1,
         god: rules.gods.includes(god) ? god : rules.gods[0],
         origin: getField('ORIGEM') || rules.origins[0],
         alignment: getField('ALINHAMENTO') || rules.alignments[4],
-        age: getField('IDADE'),
+        age: getField('IDADE') || getField('Idade'),
+        lore: getField('NOTAS') || getField('ANOTAÇÕES') || getField('HISTORIA') || getField('HISTÓRIA') || "",
         size: getDropdown('SeleTamanho') || 'Médio',
         speed: getField('Desloc'),
         baseAttributes: { ...formData.baseAttributes },
@@ -371,16 +395,27 @@ function App() {
       const lines = powersText.split(/\r?\n/).filter(l => l.trim());
       const godPowers = rules.godPowers[newForm.god] || [];
       const knownProficiencies = rules.proficiencies;
+      const allPowers = powersData.map(p => p.name);
+      const allSpells = spellsData.map(s => s.name);
 
       lines.forEach(line => {
         const trimmed = line.trim();
+        if (!trimmed) return;
+
         if (godPowers.includes(trimmed)) {
           newForm.powers.push(trimmed);
         } else if (knownProficiencies.find(p => trimmed.includes(p))) {
           const prof = knownProficiencies.find(p => trimmed.includes(p));
           if (!newForm.proficiencies.includes(prof)) newForm.proficiencies.push(prof);
-        } else {
+        } else if (allPowers.includes(trimmed)) {
+          newForm.powers.push(trimmed);
+        } else if (allSpells.includes(trimmed)) {
           newForm.spells.push(trimmed);
+        } else {
+          // Fallback: If it's seemingly a generic text, put in powers (likely class features like "Fúria")
+          // unless user specifically manages spells separate.
+          // For now, default to powers as 'Misc Abilities' logic.
+          newForm.powers.push(trimmed);
         }
       });
 
@@ -462,14 +497,40 @@ function App() {
     });
   };
 
+  /* Helper for damage reduction */
+  const reduceDamageStep = (dmg) => {
+    // Basic T20 scale: 1d12 -> 1d10 -> 1d8 -> 1d6 -> 1d4 -> 1d3 -> 1
+    // Does not cover all complex cases (like 2d6 -> 1d10) but covers basic simple weapons like Mace.
+    const map = {
+      '1d12': '1d10',
+      '1d10': '1d8',
+      '1d8': '1d6',
+      '1d6': '1d4',
+      '1d4': '1d3',
+      '1d3': '1',
+      '1d2': '1'
+    };
+    return map[dmg] || dmg; // Fallback to original if not found
+  };
+
   const handleAddWeapon = () => {
     const w = weaponsData[selectedWeaponIdx];
+    let damage = w.damage || '';
+
+    // Apply Small Size reduction
+    // Note: In T20, races like Goblin are 'Small' but the rules text often refers to strict size categories.
+    // Assuming formData.size stores "Pequeno" or similar.
+    // Let's normalize check.
+    if (formData.size && formData.size.toLowerCase() === 'pequeno') {
+      damage = reduceDamageStep(damage);
+    }
+
     addItem('attacks', {
-      name: w.name,
+      name: w.name || '',
       bonus: '', // User calculates
-      damage: w.damage,
-      crit: w.critical,
-      type: w.damageType,
+      damage: damage,
+      crit: w.critical || '',
+      type: w.damageType || '',
       range: w.range || '-'
     });
     addToInventory(w.name, w.slots, 1, true, 'weapon');
@@ -548,6 +609,15 @@ function App() {
     }
   };
 
+  const handleAddPowerFromGod = (powerName) => {
+    if (!formData.powers.includes(powerName)) {
+      setFormData(prev => ({
+        ...prev,
+        powers: [...prev.powers, powerName]
+      }));
+    }
+  };
+
 
 
   const generatePDF = async () => {
@@ -556,17 +626,53 @@ function App() {
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
     const form = pdfDoc.getForm();
 
+    // Remove automation/scripts from the PDF
+    // 1. Remove Document-level scripts (OpenAction, etc) if possible (tricky with high-level API, focusing on fields first)
+
     const fields = form.getFields();
     fields.forEach(field => {
+      // Remove "RV" (Rich Value) which can contain formatting scripts
       if (field.acroField.dict.has(PDFName.of('RV'))) field.acroField.dict.delete(PDFName.of('RV'));
+
+      // Remove "AA" (Additional Actions) - usually triggers scripts on focus/blur/calculate
+      if (field.acroField.dict.has(PDFName.of('AA'))) field.acroField.dict.delete(PDFName.of('AA'));
+
+      // Remove "A" (Action)
+      if (field.acroField.dict.has(PDFName.of('A'))) field.acroField.dict.delete(PDFName.of('A'));
+
+      // Ensure ReadOnly flag is OFF so we can edit, but typically we want to set it at the end?
+      // For now, just removing the "Computed" flag if it exists is good.
       const flags = field.acroField.getFlags();
-      if ((flags & 33554432) !== 0) field.acroField.setFlags(flags & ~33554432);
+      if ((flags & 33554432) !== 0) field.acroField.setFlags(flags & ~33554432); // Remove ReadOnly if set
     });
+
+    // Try to remove AcroForm-level script entries
+    // Note: detailed catalog access can be risky if method not available.
+    // Focusing on field-level cleaning which covers most automation.
+
+
+    const allFieldNames = form.getFields().map(f => f.getName());
+    const findField = (name) => {
+      if (allFieldNames.includes(name)) return name;
+      return allFieldNames.find(f => f.trim().toLowerCase() === name.trim().toLowerCase()) || name;
+    };
 
     const safeFill = (name, value) => {
       try {
-        const field = form.getTextField(name);
-        if (field) field.setText(String(value));
+        const fieldName = findField(name);
+        const field = form.getTextField(fieldName);
+        if (field) {
+          const valStr = value === undefined || value === null ? "" : String(value);
+          field.setText(valStr);
+        }
+      } catch (e) { }
+    };
+
+    const safeCheck = (name, checked) => {
+      try {
+        const field = form.getCheckBox(name);
+        if (field && checked) field.check();
+        else if (field && !checked) field.uncheck();
       } catch (e) { }
     };
 
@@ -584,9 +690,10 @@ function App() {
     safeFill('Desloc', formData.speed);
 
     // Lore / Historia
-    safeFill('HISTORIA', formData.lore);
-    safeFill('HISTÓRIA', formData.lore);
-    safeFill('NOTAS', formData.lore);
+    safeFill('Anotações', formData.lore);
+    safeFill('NOTAS', formData.lore); // Keep as fallback
+    safeFill('HISTORIA', formData.lore); // Keep legacy just in case
+
 
     try {
       const sizeField = form.getDropdown('SeleTamanho');
@@ -606,10 +713,7 @@ function App() {
       const isTrained = formData.skills[skill.name];
       const total = skillTotals[skill.name];
       if (isTrained) {
-        try {
-          const checkbox = form.getCheckBox(map.check);
-          if (checkbox) checkbox.check();
-        } catch (e) { }
+        safeCheck(map.check, true);
       }
       const totalStr = total >= 0 ? `+${total}` : `${total}`;
       safeFill(map.total, totalStr.replace('+', ''));
@@ -1198,17 +1302,28 @@ Por favor, escreva uma biografia que explique como esse personagem obteve sua cl
         </div>
 
         <h3>Poderes Divinos ({formData.god})</h3>
+        <p className="hint" style={{ marginBottom: '10px' }}>
+          Deuses concedem poderes aos devotos. Paladinos (Abençoado) podem escolher 2, outros devotos escolhem 1.
+          Adicione manualmente os poderes desejados abaixo:
+        </p>
         <div className="tags-container">
-          {rules.godPowers[formData.god] && rules.godPowers[formData.god].map(power => (
-            <label key={power} className="tag-check">
-              <input
-                type="checkbox"
-                checked={formData.powers.includes(power)}
-                onChange={() => handlePowerToggle(power)}
-              />
-              {power}
-            </label>
-          ))}
+          {rules.godPowers[formData.god] && rules.godPowers[formData.god].map(power => {
+            const added = formData.powers.includes(power);
+            return (
+              <button
+                key={power}
+                className={`tag-btn ${added ? 'added' : ''}`}
+                onClick={() => {
+                  if (added) handlePowerToggle(power); // Allow removing if already added
+                  else handleAddPowerFromGod(power);
+                }}
+                disabled={added} // Visual feedback
+                style={{ opacity: added ? 0.6 : 1, cursor: added ? 'default' : 'pointer' }}
+              >
+                {added ? "✓ " : "+ "}{power}
+              </button>
+            );
+          })}
         </div>
 
         <h3>Proficiências</h3>
@@ -1242,23 +1357,33 @@ Por favor, escreva uma biografia que explique como esse personagem obteve sua cl
       <div className="card">
         <div className="attr-header">
           <h2>Perícias</h2>
-          <div className={`points-display ${Object.keys(formData.skills).length > (rules.classSkills[formData.class]?.count + Math.max(0, finalAttributes.Int) + rules.classSkills[formData.class]?.fixed?.length + (rules.classSkills[formData.class]?.selectFixed?.count || 0)) ? 'error' : ''}`}>
+          <div className={`points-display ${Object.keys(formData.skills).length > (rules.classSkills[formData.class]?.count + Math.max(0, finalAttributes.Int) + rules.classSkills[formData.class]?.fixed?.length + (rules.classSkills[formData.class]?.selectFixed?.count || 0) + (formData.originSkillBonus || 0)) ? 'error' : ''}`}>
             Treinadas: {
               Object.keys(formData.skills).length
             } / {
               (rules.classSkills[formData.class]?.fixed?.length || 0) +
               (rules.classSkills[formData.class]?.selectFixed?.count || 0) +
               (rules.classSkills[formData.class]?.count || 0) +
-              Math.max(0, finalAttributes.Int)
+              Math.max(0, finalAttributes.Int) +
+              (formData.originSkillBonus || 0)
             }
           </div>
         </div>
-        <p className="hint">
-          Limite: {rules.classSkills[formData.class]?.fixed?.length || 0} fixas +
-          {rules.classSkills[formData.class]?.selectFixed?.count || 0} escolha fixa +
-          {rules.classSkills[formData.class]?.count || 0} da classe +
-          {Math.max(0, finalAttributes.Int)} de Inteligência.
-        </p>
+        <div style={{ padding: '0 20px 15px', color: '#666', fontSize: '0.9rem' }}>
+          Limite: Classes ({rules.classSkills[formData.class]?.count || 0}) +
+          Int ({Math.max(0, finalAttributes.Int)}) +
+          Origem (
+          <input
+            type="number"
+            min="0"
+            max="10"
+            className="input-num-small"
+            style={{ width: '40px', marginLeft: '5px' }}
+            value={formData.originSkillBonus || 0}
+            onChange={(e) => setFormData(prev => ({ ...prev, originSkillBonus: parseInt(e.target.value) || 0 }))}
+          />
+          )
+        </div>
         <div className="skills-grid">
           {skillsList.map(skill => {
             const classInfo = rules.classSkills[formData.class];
@@ -1283,7 +1408,8 @@ Por favor, escreva uma biografia que explique como esse personagem obteve sua cl
                     const limit = (classInfo?.fixed?.length || 0) +
                       (classInfo?.selectFixed?.count || 0) +
                       (classInfo?.count || 0) +
-                      Math.max(0, finalAttributes.Int);
+                      Math.max(0, finalAttributes.Int) +
+                      (prev.originSkillBonus || 0);
 
                     if (!isTrained && currentTrained >= limit) {
                       alert("Limite de perícias treinadas atingido!");
